@@ -6,15 +6,33 @@ package com.mycompany.week8_skeletoncode_lab;
 
 /**
  *
- * @author MoaathAlrajab
+ * @author Eric Paiz
  */
 public class Problem01 {
     
     public static long getSumOfPrimes(int n){
-    // Todo 04: Develop a method that returns the sum of the prime numbers between 1 and n
-    //          Test your solution
-    //          Analyze its space and time  
-    
+        long sum = 0;
+        for (int num = 2; num <= n; num++){
+            if (primeCheck(num) == true){
+                sum += num;
+            }
+        }
+        return sum;
     }
-    
+    public static boolean primeCheck(int num){
+        if (num <= 1){
+            return false;
+        }
+
+        for (int i = 2; i * i <= num; i++){
+            if (num % i == 0){
+                return false;
+
+            }
+        }
+        return true;
+    }
+    // The worst case is this loops through checking all numbers up to the square root of input n
+    // O(sqrt(n)) -- n is the number being checked, which the algorithm will loop up to in the worst case(doesnt match case at all/item not found)
+
 }
