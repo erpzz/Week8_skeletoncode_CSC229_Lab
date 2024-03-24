@@ -6,15 +6,25 @@ package com.mycompany.week8_skeletoncode_lab;
 
 /**
  *
- * @author MoaathAlrajab
+ * @author Eric Paiz
  */
 public class LinearSearch {
-    
-    public static int search(int arr[], int x)
-    {
+
+    public static int search(int arr[], int x) {
         int n = arr.length;
-        // Todo 01: - complete the implementation of linear search and test your code  
-         //         - prvoide asymptotic analysis of the developed solution
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == x) {
+                return i;
+            }
+
+            // The worst case scenario of this algorithm is an item not being
+            // found in the array, so the loop continues until the algorithm
+            // has looped the length of the array. It is a linear search so it is O(n)
+        }
+        return -1;
     }
-    
 }
+
+
+
