@@ -21,6 +21,6 @@ public class BubbleSort {
                 }
             }
         }
-    } //Time complexity is O(N^2) because of the dual nested loop checking over the array
+    } //Time complexity is O(N^2) because of the dual nested loop checking over the array.
 
 }
