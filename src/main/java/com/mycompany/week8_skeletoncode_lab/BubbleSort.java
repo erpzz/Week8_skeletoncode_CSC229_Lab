@@ -6,18 +6,46 @@ package com.mycompany.week8_skeletoncode_lab;
 
 /**
  *
- * @author MoaathAlrajab
+ * @author Eric Paiz
  */
-public class BubbleSort {
+public class BinarySearch {
 
-    public static void bubbleSort(int a[], int size) {
-        int outer, inner, temp;
-        for (outer = size - 1; outer > 0; outer--) { // counting down
-            for (inner = 0; inner < outer; inner++) { // bubbling up
-                //ToDo 3: complete this algorithm, test it, provide its time complexity
+    public static int runBinarySearchIteratively(
+            int[] sortedArray, int key, int low, int high) {
+        int index = Integer.MAX_VALUE;
+
+        while (low <= high) {
+            int mid = low + ((high - low) / 2);
+            if (sortedArray[mid] < key) {
+                low = mid + 1;
+            } else if (sortedArray[mid] > key) {
+                high = mid - 1;
+            } else if (sortedArray[mid] == key) {
+                index = mid;
+                break;
             }
         }
+        return index;
     }
-    
-    
+
+
+    public static void main(String[] args) {
+        int [] sortedArray = {3,8,13,29,42,91};
+        int key = 29;
+        int index = BinarySearch.runBinarySearchIteratively(sortedArray, key, 0, sortedArray.length-1);
+
+        if (index != Integer.MAX_VALUE) {
+            System.out.println("Index location of key: " + index);
+        }else {
+            System.out.println("Array does not contain the key");
+        }
+    }
 }
+
+
+
+// The time complexity is O(log n). With each loop, half the entries are eliminated, in a logarithmic manner.
+//
+
+
+
